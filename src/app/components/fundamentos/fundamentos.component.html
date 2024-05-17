@@ -1,0 +1,47 @@
+<p>fundamentos works!</p>
+<hr>
+<section>
+    <h2>Propiedades e interpolación</h2>
+    <p>Estoy utilizando el framework: {{nombreFramework}} con base en {{nombreLenguaje}}</p>
+    <p>&copy; {{anio}}</p>
+    <p>4 x 2 = {{4 * 2}}</p>
+    <p>En tu carrito tienes {{carrito.length}} productos</p>
+</section>
+<hr>
+<section>
+    <h2>Control de flujo</h2>
+    @if(estaLogueado){
+        <p>Hola, bienvenido!</p>
+        <p>Usted está logueado.</p>
+    }@else {
+        <p>Por favor inicie sesión</p>
+        <p>Usted NO está logueado.</p>
+    }
+    <p>Productos en el carrito:</p>
+    <ul>
+        @for(producto of carrito; track $index){
+            <li>{{producto}}</li>
+        }
+    </ul>
+    <ol>
+        @for(framework of frameworks; track framework.id){
+            <li>{{framework.nombre}}</li>
+        }
+    </ol>
+</section>
+<hr>
+<section>
+    <h2>Enlace de atributo/propiedad</h2>
+    <button type="button" [disabled]="!estaLogueado">Cerrar sesión</button>
+</section>
+<hr>
+<section>
+    <h2>Manejo de eventos</h2>
+    <button type="button" (click)="manejarClick()">Manejar click</button>
+    <div class="caja {{colorFondo}}" (mouseover)="manejarMouseover()" (mousedown)="manejarMousedown()" (mouseup)="manejarMouseup()"></div>
+</section>
+<hr>
+<section>
+    <h2>Pasando datos</h2>
+    <app-padre></app-padre>
+</section>
