@@ -46,3 +46,40 @@
     <h2>Pasando datos</h2>
     <app-padre></app-padre>
 </section>
+<!--Clase 17 de mayo del 2024-->
+<hr>
+<section>
+    <!--Formularios template-driven-->
+    <h2>Formularios</h2>
+    <div>
+        <h3>
+            Formularios template-driven
+        </h3>
+        <!--crear un formulario basico-->
+        <form>
+            <label>
+                <!--la idea es con estos datos enlazarlos a una conexion que yo tenga en la logica de mi componente -->
+                <input type="text" placeholder="Escriba su framwork favorito" name="frameworkFavorito"
+                 [(ngModel)]="frameworkFavorito"><!--creo este ng Model pero tengo que importarlo para que no me salga error-->
+                
+            </label>
+            <!--creo un boton asociado a una funcion llamada mostrarFrameworkFavorito que al hacer click me permite ver por consola la informacion que se ingreso en el input-->
+            <button type="button" (click)="mostrarFrameworkFavorito()">Ver framework favorito</button>
+        </form>
+    </div>
+</section>
+<!--otro tipo de forulario se llama formulario reactivo-->
+<section>
+    <div>
+        <h3>Formularios Reactivos</h3>
+            <!--para crear este tipo de formularios debo realizar una nueva importacion de nuestra libreria forms llamada ReactiveFormsModule, para este ejemplo voy a crear un formulario de logueo-->
+    </div>
+    <!--al formulario le tengo que establecer una propiedad llamada form group es una forma de decirle a angular que tengo agrupado unos controles para poder usar esto debo importar FormControl y FormGroup, a usar un formulario reactivo uso el evento ngSubmit el cual se activa cuando yo le de clic en Iniciar sesion al cual le asigno un metodo llamado manejar envio-->
+        <form [formGroup]="Formulariocredenciales"(ngSubmit)="manejarEnvio()">
+            <!--para enlazar el input con su dato para que sepa que efectivamente lo que ingrese en el cuadro usuario lo tome comousuario y lo que ingrese en el dato contrasena lo tome como la contrasena, esto lo voy a hacer con la ayuda de FormControl asi qeu para ambos casos voya  agregar una propiedad que se llama formControlName-->
+            <input type="text" placeholder="usuario" formControlName="usuario"><!--los datos que le pongo el en formcontrol name son los datos del archivo .ts en donde creo al usuario y la contrasena con el formulario de control-->
+            <input type="password" placeholder="contrasena" formControlName="contrasenia">
+            <button>Iniciar sesion</button>
+        </form>
+</section>
+
