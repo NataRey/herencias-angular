@@ -11,8 +11,6 @@ import { HijoComponent } from '../hijo/hijo.component';
 export class PadreComponent {
   estudiantes = new Array();
   agregarEstudiante(estudiante: string){
-    this.estudiantes.push(estudiante)
+    this.estudiantes.push(estudiante);
   }
-
-
 }

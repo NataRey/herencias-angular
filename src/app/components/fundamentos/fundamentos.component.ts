@@ -75,7 +75,7 @@ export class FundamentosComponent {
     //para enlazarlo voy al html a mi input 
   }
 
-  //creo esa propiedad que va a ser una nueva instancia de ese formgrup pero para que reciba los datos agrupados debo decirle a formGroup que use el FormControl
+  //creo esa propiedad que va a ser una nueva instancia de ese formgroup pero para que reciba los datos agrupados debo decirle a formGroup que use el FormControl
   Formulariocredenciales = new FormGroup({
     //pero primero creo las propiedades con el usuario y contrasena diciendo que usuario tiene como instancia un nuevo formcontrol con un string vacio
     usuario: new FormControl(''),
@@ -88,5 +88,8 @@ export class FundamentosComponent {
     //que por el momento va a mostrar las credenciales que digito el usuario al dejarlo de esta forma console.log("credenciales", this.Formulariocredenciales); me va a mostrar un formGroup que traer varios datos de la libreria entre esos las credenciales de usuarios y contrasena pero si yo quiero ver solo estos datos al final agrego un .value para que solo me traiga los datos que tengo en mi input quedaria de esta forma console.log("credenciales", this.Formulariocredenciales.value);
     console.log("credenciales", this.Formulariocredenciales.value);
   }
-  
 }
+
+//crear un nuevo proyecto de angular
+//utilizando un  componente padre y componente hijo montar un contador en donde en pantalla se vean dos botones uno que diga - y otro con un + en medio de esos dos botones se imprima un numero que inicie en 0 cuando yo presione el + se incremente y cuando presione - se decremente, los valores deben estar en el componente padre pero que en el componente padre los datos que se incrementen en el hijo deben verse multiplicados por 2  y en el componente hijo debe estar la interfaz  donde se ven los botones y el contador usando los dos componentes
+
